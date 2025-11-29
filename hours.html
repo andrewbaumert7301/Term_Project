@@ -26,14 +26,15 @@
         </nav>
 
         <!-- This is the Content section of the page. it is different for each page -->
-        <section class="contentSection">
-            <h1>Hours Page Content Section</h1> <!-- Change this text later -->
-            <!-- The content section on the hours page should include the working hours of the restaurant. Also, based
-            on the working hours you mention in this page, your page should tell the visitor if the restaurant
-            is currently open or closed. For instance, if the restaurant is closed on Sunday mornings and a
-            user visitsthe hours page at 11:00 am on a Sunday, they should see a message telling them that the
-            restaurant is closed. -->
-        </section>
+       <section class="contentSection">
+            <h1>Restaurant Hours</h1>
+
+         <!-- JavaScript will dynamically insert the weekly hours here -->
+       <div id="hours-box"></div>
+                </section>
+
+        <!-- Load JavaScript AFTER the content -->
+        <script src="script.js"></script>
 
         <!-- This is the footer section which shows the copyright notice, address of the restaurant and any other information -->
         <footer>
