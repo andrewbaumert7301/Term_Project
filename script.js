@@ -19,3 +19,26 @@ window.addEventListener("DOMContentLoaded", () => {
     imgElement = document.getElementById("largeFoodImage"); // Get the image element from the html
     setInterval(changeImage, 5000); // Call changeImage every 5 seconds
 });
+// === HOURS PAGE SCRIPT ===
+document.addEventListener("DOMContentLoaded", function () {
+    const hoursBox = document.getElementById("hours-box");
+    if (!hoursBox) return; // Only run this code on the Hours page
+
+    const hours = [
+        "Monday: 9 AM – 8 PM",
+        "Tuesday: 9 AM – 8 PM",
+        "Wednesday: 9 AM – 8 PM",
+        "Thursday: 9 AM – 8 PM",
+        "Friday: 9 AM – 10 PM",
+        "Saturday: 10 AM – 10 PM",
+        "Sunday: 10 AM – 6 PM"
+    ];
+
+    let html = "<ul>";
+    for (let i = 0; i < hours.length; i++) {
+        html += `<li>${hours[i]}</li>`;
+    }
+    html += "</ul>";
+
+    hoursBox.innerHTML = html;
+});
