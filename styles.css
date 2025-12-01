@@ -29,8 +29,9 @@ h1 {
     padding: 0;
 
     display: flex;
-    justify-content: center;
-    gap: 20%;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    gap: 40px;
 }
 
 .navbar li a {
@@ -38,7 +39,8 @@ h1 {
     color: black;
     font-size: 18px;
     font-weight: 500;
-    padding:20%
+    padding: 10px 15px; 
+    white-space: nowrap;
 }
 
 .navbar li a:hover {
