@@ -22,7 +22,20 @@ window.addEventListener("DOMContentLoaded", () => {
 // === HOURS PAGE SCRIPT ===
 document.addEventListener("DOMContentLoaded", function () {
     const hoursBox = document.getElementById("hours-box");
-    if (!hoursBox) return; // Only run this code on the Hours page
+    const statusBar = document.getElementById("open-status");
+
+    if (!hoursBox || !statusBar) return; // Only run this code on the Hours page
+
+    // Store opening hours in 24-hour format
+    const weeklyHours = {
+        1: [9, 20],   // Monday
+        2: [9, 20],   // Tuesday
+        3: [9, 20],   // Wednesday
+        4: [9, 20],   // Thursday
+        5: [9, 22],   // Friday
+        6: [10, 22],  // Saturday
+        0: [10, 18]   // Sunday (0 in JS)
+    };
 
     const hours = [
         "Monday: 9 AM – 8 PM",
@@ -41,4 +54,20 @@ document.addEventListener("DOMContentLoaded", function () {
     html += "</ul>";
 
     hoursBox.innerHTML = html;
+
+    const now = new Date();
+    const today = now.getDay();
+    const currentHour = now.getHours();
+
+    const [openHour, closeHour] = weeklyHours[today];
+
+    if (currentHour >= openHour && currentHour < closeHour) {
+        statusBar.textContent = "We are OPEN!";
+        statusBar.style.backgroundColor = "green";
+        statusBar.style.color = "white";
+    } else {
+        statusBar.textContent = "We are CLOSED!";
+        statusBar.style.backgroundColor = "red";
+        statusBar.style.color = "white";
+    }
 });
